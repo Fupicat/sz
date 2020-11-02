@@ -1,8 +1,8 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Planets/Town/Base.png" type="Texture" id=1]
-[ext_resource path="res://Entities/Scrat/Player.gd" type="Script" id=2]
-[ext_resource path="res://Entities/Scrat/Scrat.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scrat/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scrat/Characters/Player.tres" type="Resource" id=3]
 [ext_resource path="res://Planets/Town/Restaurant.png" type="Texture" id=4]
 [ext_resource path="res://Planets/Town/ClothingStore.png" type="Texture" id=5]
 [ext_resource path="res://Shaders/outline.shader" type="Shader" id=6]
@@ -20,9 +20,6 @@ extents = Vector2( 92.1823, 100.37 )
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 97.0598, 101.33 )
-
-[sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 66.4702, 147.262 )
 
 [node name="Node2D" type="Node2D"]
 
@@ -68,20 +65,5 @@ texture = ExtResource( 5 )
 position = Vector2( -7.74652, 147.229 )
 shape = SubResource( 4 )
 
-[node name="Char" type="KinematicBody2D" parent="."]
-script = ExtResource( 2 )
-
-[node name="Scrat" parent="Char" instance=ExtResource( 3 )]
-
-[node name="Col" type="CollisionShape2D" parent="Char"]
-shape = SubResource( 5 )
-
-[node name="Focus" type="Node2D" parent="Char"]
-position = Vector2( 0, -300 )
-
-[node name="Cam" type="Camera2D" parent="Char/Focus"]
-rotating = true
-current = true
-zoom = Vector2( 3, 3 )
-smoothing_enabled = true
-smoothing_speed = 10.0
+[node name="Player" parent="." instance=ExtResource( 2 )]
+profile = ExtResource( 3 )

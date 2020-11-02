@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Brown.png-a602b88a481cea0028eb0c85e1dcbeea.stex"
+path="res://.import/RocketSneakers.png-b9f2f6c6fa83c9c58e8241255fb84670.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Entities/Scrat/Foot/Brown.png"
-dest_files=[ "res://.import/Brown.png-a602b88a481cea0028eb0c85e1dcbeea.stex" ]
+source_file="res://Items/Clothes/Feet/RocketSneakers.png"
+dest_files=[ "res://.import/RocketSneakers.png-b9f2f6c6fa83c9c58e8241255fb84670.stex" ]
 
 [params]
 

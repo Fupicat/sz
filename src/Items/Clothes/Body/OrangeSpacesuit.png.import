@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/OrangeSpacesuit.png-c91ba99147c0a7f8586a452764ee1423.stex"
+path="res://.import/OrangeSpacesuit.png-6c0bece93cc1a84d2f5ac246b1f5bdbf.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Entities/Scrat/Body/OrangeSpacesuit.png"
-dest_files=[ "res://.import/OrangeSpacesuit.png-c91ba99147c0a7f8586a452764ee1423.stex" ]
+source_file="res://Items/Clothes/Body/OrangeSpacesuit.png"
+dest_files=[ "res://.import/OrangeSpacesuit.png-6c0bece93cc1a84d2f5ac246b1f5bdbf.stex" ]
 
 [params]
 

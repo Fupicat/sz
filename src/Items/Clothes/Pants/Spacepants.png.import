@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/White.png-b41914dc4a12e609afd86a4c2cad6b7a.stex"
+path="res://.import/Spacepants.png-2ee162f2773dd70ecf3d7c5d67fefe9b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Entities/Scrat/Hand/White.png"
-dest_files=[ "res://.import/White.png-b41914dc4a12e609afd86a4c2cad6b7a.stex" ]
+source_file="res://Items/Clothes/Pants/Spacepants.png"
+dest_files=[ "res://.import/Spacepants.png-2ee162f2773dd70ecf3d7c5d67fefe9b.stex" ]
 
 [params]
 

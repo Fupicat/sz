@@ -10,6 +10,7 @@ onready var planet = get_parent().get_node("Planet")
 
 func _physics_process(delta):
     gravity_step(delta)
+    apply_movement()
 
 func gravity_step(delta):
     # Direct objects's bottom towards the center of the planet.

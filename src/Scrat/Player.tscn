@@ -1,0 +1,43 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Scrat/ScratAnim.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Shaders/dissolve.shader" type="Shader" id=2]
+[ext_resource path="res://Scrat/Player.gd" type="Script" id=3]
+
+[sub_resource type="OpenSimplexNoise" id=1]
+period = 256.0
+lacunarity = 4.0
+
+[sub_resource type="NoiseTexture" id=2]
+width = 1
+noise = SubResource( 1 )
+
+[sub_resource type="ShaderMaterial" id=3]
+shader = ExtResource( 2 )
+shader_param/burn_color = Color( 1, 1, 1, 1 )
+shader_param/burn_size = 0.2
+shader_param/dissolve_amount = 0.0
+shader_param/emission_amount = 0.0
+shader_param/dissolve_texture = SubResource( 2 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 66.4702, 147.262 )
+
+[node name="Player" type="KinematicBody2D"]
+script = ExtResource( 3 )
+
+[node name="ScratAnim" parent="." instance=ExtResource( 1 )]
+material = SubResource( 3 )
+
+[node name="Col" type="CollisionShape2D" parent="."]
+shape = SubResource( 4 )
+
+[node name="Focus" type="Node2D" parent="."]
+position = Vector2( 0, -300 )
+
+[node name="Cam" type="Camera2D" parent="Focus"]
+rotating = true
+current = true
+zoom = Vector2( 3, 3 )
+smoothing_enabled = true
+smoothing_speed = 10.0

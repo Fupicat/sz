@@ -1,0 +1,16 @@
+[gd_resource type="Resource" load_steps=9 format=2]
+
+[ext_resource path="res://Scrat/ScratProfile.gd" type="Script" id=1]
+[ext_resource path="res://Items/Clothes/Head/Bald.tres" type="Resource" id=2]
+[ext_resource path="res://Items/Clothes/Feet/RocketSneakers.tres" type="Resource" id=3]
+[ext_resource path="res://Items/Clothes/Body/OrangeSpacesuit.tres" type="Resource" id=4]
+[ext_resource path="res://Items/Clothes/Pants/Spacepants.tres" type="Resource" id=5]
+[ext_resource path="res://Items/Clothes/Hands/WhiteGloves.tres" type="Resource" id=6]
+[ext_resource path="res://Items/Clothes/Feet/BrownShoes.tres" type="Resource" id=7]
+[ext_resource path="res://Items/Clothes/Hands/WhiteMittens.tres" type="Resource" id=8]
+
+[resource]
+script = ExtResource( 1 )
+name = "Scrat"
+money = 0
+inventory = [ ExtResource( 2 ), ExtResource( 4 ), ExtResource( 7 ), ExtResource( 3 ), ExtResource( 6 ), ExtResource( 8 ), ExtResource( 5 ) ]

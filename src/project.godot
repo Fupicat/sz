@@ -9,19 +9,37 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "InventoryItem",
+"class": "ClothingItem",
+"language": "GDScript",
+"path": "res://Items/ClothingItem.gd"
+}, {
+"base": "Resource",
+"class": "InventoryItem",
+"language": "GDScript",
+"path": "res://Items/InventoryItem.gd"
+}, {
 "base": "KinematicBody2D",
 "class": "OrbitPhysics",
 "language": "GDScript",
-"path": "res://Entities/OrbitPhysics.gd"
+"path": "res://Scrat/OrbitPhysics.gd"
 }, {
 "base": "OrbitPhysics",
-"class": "Scrat",
+"class": "ScratBase",
 "language": "GDScript",
-"path": "res://Entities/Scrat/Scrat.gd"
+"path": "res://Scrat/ScratBase.gd"
+}, {
+"base": "Resource",
+"class": "ScratProfile",
+"language": "GDScript",
+"path": "res://Scrat/ScratProfile.gd"
 } ]
 _global_script_class_icons={
+"ClothingItem": "",
+"InventoryItem": "",
 "OrbitPhysics": "",
-"Scrat": ""
+"ScratBase": "",
+"ScratProfile": ""
 }
 
 [application]
@@ -31,6 +49,10 @@ run/main_scene="res://Test.tscn"
 config/use_custom_user_dir=true
 config/custom_user_dir_name="SZ"
 config/icon="res://icon.png"
+
+[autoload]
+
+Global="*res://Global.gd"
 
 [display]
 

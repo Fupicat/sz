@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Eyes.png-8ddfea49cec3684616c917be9580ee72.stex"
+path="res://.import/BrownShoes.png-1d6683f436cb715ae7511b238acdc544.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Entities/Scrat/Eyes/Eyes.png"
-dest_files=[ "res://.import/Eyes.png-8ddfea49cec3684616c917be9580ee72.stex" ]
+source_file="res://Items/Clothes/Feet/BrownShoes.png"
+dest_files=[ "res://.import/BrownShoes.png-1d6683f436cb715ae7511b238acdc544.stex" ]
 
 [params]
 

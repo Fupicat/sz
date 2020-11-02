@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Debug.png-5b1154a53bdefad0af86e07e14db398e.stex"
+path="res://.import/Eyes.png-caf17995ddb9f2bc74d9a872fb382554.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Entities/Scrat/Foot/Debug.png"
-dest_files=[ "res://.import/Debug.png-5b1154a53bdefad0af86e07e14db398e.stex" ]
+source_file="res://Scrat/Eyes/Eyes.png"
+dest_files=[ "res://.import/Eyes.png-caf17995ddb9f2bc74d9a872fb382554.stex" ]
 
 [params]
 

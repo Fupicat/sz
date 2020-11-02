@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Debug.png-193a37272b0d3385a530662a7e922aa4.stex"
+path="res://.import/WhiteGloves.png-22004a976bc2f9e14963417c6fe8243b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Entities/Scrat/Hand/Debug.png"
-dest_files=[ "res://.import/Debug.png-193a37272b0d3385a530662a7e922aa4.stex" ]
+source_file="res://Items/Clothes/Hands/WhiteGloves.png"
+dest_files=[ "res://.import/WhiteGloves.png-22004a976bc2f9e14963417c6fe8243b.stex" ]
 
 [params]
 
