@@ -16,6 +16,8 @@ onready var eyes_pos = "parameters/eyes_pos/blend_position"
 func _ready():
     animtree.active = true
     eyes_look_at()
+    material.set_shader_param("dissolve_amount", 0)
+    material.get_shader_param("dissolve_texture").noise.period = 0
 
 func walk_idle_state(variation := "Normal"):
     animtree[idle_sm].travel(variation)

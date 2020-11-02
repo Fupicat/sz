@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=2]
+[gd_scene load_steps=70 format=2]
 
 [ext_resource path="res://Scrat/Head/Bald.png" type="Texture" id=1]
 [ext_resource path="res://Scrat/Hand/Debug.png" type="Texture" id=2]
@@ -7,9 +7,25 @@
 [ext_resource path="res://Scrat/Foot/Debug.png" type="Texture" id=5]
 [ext_resource path="res://Scrat/Body/OrangeSpacesuit.png" type="Texture" id=6]
 [ext_resource path="res://Scrat/AnimManager.gd" type="Script" id=7]
+[ext_resource path="res://Shaders/dissolve.shader" type="Shader" id=8]
 
-[sub_resource type="Animation" id=1]
-resource_name = "ActionDone"
+[sub_resource type="OpenSimplexNoise" id=1]
+period = 256.0
+lacunarity = 4.0
+
+[sub_resource type="NoiseTexture" id=2]
+width = 1
+noise = SubResource( 1 )
+
+[sub_resource type="ShaderMaterial" id=3]
+shader = ExtResource( 8 )
+shader_param/burn_color = Color( 1, 1, 1, 1 )
+shader_param/burn_size = 0.2
+shader_param/dissolve_amount = 0.0
+shader_param/emission_amount = 0.0
+shader_param/dissolve_texture = SubResource( 2 )
+
+[sub_resource type="Animation" id=4]
 length = 0.01
 tracks/0/type = "method"
 tracks/0/path = NodePath(".")
@@ -26,8 +42,7 @@ tracks/0/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=2]
-resource_name = "Dance"
+[sub_resource type="Animation" id=5]
 length = 7.03
 loop = true
 step = 0.05
@@ -368,8 +383,7 @@ tracks/27/keys = {
 "values": [ Vector2( 1, 1 ), Vector2( 0.7, 1 ), Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 0, 1 ), Vector2( 0, 1 ), Vector2( 0.3, 1 ), Vector2( 0.7, 1 ), Vector2( 0.3, 1 ), Vector2( 0, 1 ), Vector2( 0, 1 ), Vector2( 0, 1 ), Vector2( 0.3, 1 ), Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 0.6, 1 ), Vector2( 1, 1 ), Vector2( 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=3]
-resource_name = "EyesBlink"
+[sub_resource type="Animation" id=6]
 length = 10.0
 loop = true
 tracks/0/type = "value"
@@ -385,8 +399,7 @@ tracks/0/keys = {
 "values": [ Vector2( 1, 1 ), Vector2( 1.05, 0.2 ), Vector2( 1, 1 ), Vector2( 1.05, 0.2 ), Vector2( 1, 1 ), Vector2( 1.05, 0.2 ), Vector2( 1, 1 ), Vector2( 1.05, 0.2 ), Vector2( 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=4]
-resource_name = "EyesLeft"
+[sub_resource type="Animation" id=7]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Head/Eyes:position")
@@ -425,7 +438,7 @@ tracks/2/keys = {
 "values": [ Vector2( 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=8]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Head/Eyes:position")
@@ -464,7 +477,7 @@ tracks/2/keys = {
 "values": [ Vector2( 0.9, 1 ) ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=9]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Head/Eyes:position")
@@ -503,7 +516,7 @@ tracks/2/keys = {
 "values": [ Vector2( 0.9, 1 ) ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=10]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Head/Eyes:position")
@@ -542,7 +555,7 @@ tracks/2/keys = {
 "values": [ Vector2( 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=11]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Head/Eyes:position")
@@ -581,7 +594,7 @@ tracks/2/keys = {
 "values": [ Vector2( 0.9, 0.6 ) ]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=12]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Head/Eyes:position")
@@ -620,7 +633,7 @@ tracks/2/keys = {
 "values": [ Vector2( 0.9, 0.6 ) ]
 }
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=13]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Head/Eyes:position")
@@ -659,8 +672,7 @@ tracks/2/keys = {
 "values": [ Vector2( 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=11]
-resource_name = "EyesRightDown"
+[sub_resource type="Animation" id=14]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Head/Eyes:position")
@@ -699,7 +711,7 @@ tracks/2/keys = {
 "values": [ Vector2( 0.9, 1 ) ]
 }
 
-[sub_resource type="Animation" id=12]
+[sub_resource type="Animation" id=15]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Head/Eyes:position")
@@ -738,7 +750,7 @@ tracks/2/keys = {
 "values": [ Vector2( 0.9, 1 ) ]
 }
 
-[sub_resource type="Animation" id=13]
+[sub_resource type="Animation" id=16]
 length = 3.0
 loop = true
 tracks/0/type = "value"
@@ -1030,8 +1042,7 @@ tracks/23/keys = {
 "values": [ 0, 0 ]
 }
 
-[sub_resource type="Animation" id=14]
-resource_name = "IdleTool"
+[sub_resource type="Animation" id=17]
 length = 3.0
 loop = true
 tracks/0/type = "value"
@@ -1323,7 +1334,7 @@ tracks/23/keys = {
 "values": [ 0, 0 ]
 }
 
-[sub_resource type="Animation" id=15]
+[sub_resource type="Animation" id=18]
 tracks/0/type = "value"
 tracks/0/path = NodePath("FootBG:position")
 tracks/0/interp = 1
@@ -1541,7 +1552,87 @@ tracks/17/keys = {
 "values": [ 0.0, 0.0, 0.0 ]
 }
 
-[sub_resource type="Animation" id=16]
+[sub_resource type="Animation" id=19]
+resource_name = "TeleportIn"
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:material:shader_param/dissolve_amount")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 1 ),
+"transitions": PoolRealArray( 2, 1, 1 ),
+"update": 0,
+"values": [ 1.0, 0.8, 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:material:shader_param/dissolve_texture:noise:period")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.1, 256.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:material:shader_param/emission_amount")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.2, 0.25, 0.35, 0.4, 0.85 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 1.0, 0.0, 1.0, 0.0, 1.0, 0.0 ]
+}
+
+[sub_resource type="Animation" id=20]
+resource_name = "TeleportOut"
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:material:shader_param/dissolve_amount")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.7, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.6, 0.7, 1.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:material:shader_param/dissolve_texture:noise:period")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.1, 256.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:material:shader_param/emission_amount")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.2, 0.3, 0.4, 0.45, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 1.0, 0.0, 1.0, 0.0, 1.0, 0.0 ]
+}
+
+[sub_resource type="Animation" id=21]
 length = 0.8
 loop = true
 step = 0.05
@@ -1834,8 +1925,7 @@ tracks/23/keys = {
 "values": [ 0, 0 ]
 }
 
-[sub_resource type="Animation" id=17]
-resource_name = "WalkTool"
+[sub_resource type="Animation" id=22]
 length = 0.8
 loop = true
 step = 0.05
@@ -2128,183 +2218,203 @@ tracks/23/keys = {
 "values": [ 0, 0 ]
 }
 
-[sub_resource type="AnimationNodeAnimation" id=18]
+[sub_resource type="AnimationNodeAnimation" id=23]
 animation = "ActionDone"
 
-[sub_resource type="AnimationNodeAnimation" id=51]
+[sub_resource type="AnimationNodeAnimation" id=24]
 animation = "Dance"
 
-[sub_resource type="AnimationNodeAnimation" id=19]
+[sub_resource type="AnimationNodeAnimation" id=25]
 animation = "Jump"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=20]
+[sub_resource type="AnimationNodeAnimation" id=26]
+animation = "TeleportIn"
+
+[sub_resource type="AnimationNodeAnimation" id=27]
+animation = "TeleportOut"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=28]
 switch_mode = 2
 auto_advance = true
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=52]
+[sub_resource type="AnimationNodeStateMachineTransition" id=29]
 
-[sub_resource type="AnimationNodeStateMachine" id=21]
-states/ActionDone/node = SubResource( 18 )
+[sub_resource type="AnimationNodeStateMachineTransition" id=30]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=31]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachine" id=32]
+states/ActionDone/node = SubResource( 23 )
 states/ActionDone/position = Vector2( 184, 83 )
-states/Dance/node = SubResource( 51 )
+states/Dance/node = SubResource( 24 )
 states/Dance/position = Vector2( 289, 198 )
-states/Jump/node = SubResource( 19 )
+states/Jump/node = SubResource( 25 )
 states/Jump/position = Vector2( 97, 198 )
-transitions = [ "Jump", "ActionDone", SubResource( 20 ), "Dance", "ActionDone", SubResource( 52 ) ]
-graph_offset = Vector2( -234, 74 )
+states/TeleportIn/node = SubResource( 26 )
+states/TeleportIn/position = Vector2( -17, 134 )
+states/TeleportOut/node = SubResource( 27 )
+states/TeleportOut/position = Vector2( -36, 53 )
+transitions = [ "Jump", "ActionDone", SubResource( 28 ), "Dance", "ActionDone", SubResource( 29 ), "TeleportIn", "ActionDone", SubResource( 30 ), "TeleportOut", "ActionDone", SubResource( 31 ) ]
+graph_offset = Vector2( -308, -15 )
 
-[sub_resource type="AnimationNodeAnimation" id=22]
+[sub_resource type="AnimationNodeAnimation" id=33]
 animation = "EyesBlink"
 
-[sub_resource type="AnimationNodeAdd2" id=23]
+[sub_resource type="AnimationNodeAdd2" id=34]
 
-[sub_resource type="AnimationNodeAnimation" id=24]
+[sub_resource type="AnimationNodeAnimation" id=35]
 animation = "EyesLeftUp"
 
-[sub_resource type="AnimationNodeAnimation" id=25]
+[sub_resource type="AnimationNodeAnimation" id=36]
 animation = "EyesLeft"
 
-[sub_resource type="AnimationNodeAnimation" id=26]
+[sub_resource type="AnimationNodeAnimation" id=37]
 animation = "EyesLeftDown"
 
-[sub_resource type="AnimationNodeAnimation" id=27]
+[sub_resource type="AnimationNodeAnimation" id=38]
 animation = "EyesMiddleDown"
 
-[sub_resource type="AnimationNodeAnimation" id=28]
+[sub_resource type="AnimationNodeAnimation" id=39]
 animation = "EyesRightDown"
 
-[sub_resource type="AnimationNodeAnimation" id=29]
+[sub_resource type="AnimationNodeAnimation" id=40]
 animation = "EyesRight"
 
-[sub_resource type="AnimationNodeAnimation" id=30]
+[sub_resource type="AnimationNodeAnimation" id=41]
 animation = "EyesRightUp"
 
-[sub_resource type="AnimationNodeAnimation" id=31]
+[sub_resource type="AnimationNodeAnimation" id=42]
 animation = "EyesMiddleUp"
 
-[sub_resource type="AnimationNodeAnimation" id=32]
+[sub_resource type="AnimationNodeAnimation" id=43]
 animation = "EyesMiddle"
 
-[sub_resource type="AnimationNodeBlendSpace2D" id=33]
-blend_point_0/node = SubResource( 24 )
+[sub_resource type="AnimationNodeBlendSpace2D" id=44]
+blend_point_0/node = SubResource( 35 )
 blend_point_0/pos = Vector2( -0.7, 0.7 )
-blend_point_1/node = SubResource( 25 )
+blend_point_1/node = SubResource( 36 )
 blend_point_1/pos = Vector2( -1, 0 )
-blend_point_2/node = SubResource( 26 )
+blend_point_2/node = SubResource( 37 )
 blend_point_2/pos = Vector2( -0.7, -0.7 )
-blend_point_3/node = SubResource( 27 )
+blend_point_3/node = SubResource( 38 )
 blend_point_3/pos = Vector2( 0, -1 )
-blend_point_4/node = SubResource( 28 )
+blend_point_4/node = SubResource( 39 )
 blend_point_4/pos = Vector2( 0.7, -0.7 )
-blend_point_5/node = SubResource( 29 )
+blend_point_5/node = SubResource( 40 )
 blend_point_5/pos = Vector2( 1, 0 )
-blend_point_6/node = SubResource( 30 )
+blend_point_6/node = SubResource( 41 )
 blend_point_6/pos = Vector2( 0.7, 0.7 )
-blend_point_7/node = SubResource( 31 )
+blend_point_7/node = SubResource( 42 )
 blend_point_7/pos = Vector2( 0, 1 )
-blend_point_8/node = SubResource( 32 )
+blend_point_8/node = SubResource( 43 )
 blend_point_8/pos = Vector2( 0, 0 )
 
-[sub_resource type="AnimationNodeOneShot" id=34]
+[sub_resource type="AnimationNodeOneShot" id=45]
 
-[sub_resource type="AnimationNodeAdd2" id=35]
+[sub_resource type="AnimationNodeAdd2" id=46]
 
-[sub_resource type="AnimationNodeAnimation" id=36]
+[sub_resource type="AnimationNodeAnimation" id=47]
 animation = "Idle"
 
-[sub_resource type="AnimationNodeAnimation" id=37]
+[sub_resource type="AnimationNodeAnimation" id=48]
 animation = "IdleTool"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=38]
+[sub_resource type="AnimationNodeStateMachineTransition" id=49]
 switch_mode = 1
 xfade_time = 0.1
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=39]
+[sub_resource type="AnimationNodeStateMachineTransition" id=50]
 switch_mode = 1
 xfade_time = 0.1
 
-[sub_resource type="AnimationNodeStateMachine" id=40]
-states/Normal/node = SubResource( 36 )
+[sub_resource type="AnimationNodeStateMachine" id=51]
+states/Normal/node = SubResource( 47 )
 states/Normal/position = Vector2( 197, 61 )
-states/Tool/node = SubResource( 37 )
+states/Tool/node = SubResource( 48 )
 states/Tool/position = Vector2( 395, 61 )
-transitions = [ "Normal", "Tool", SubResource( 38 ), "Tool", "Normal", SubResource( 39 ) ]
+transitions = [ "Normal", "Tool", SubResource( 49 ), "Tool", "Normal", SubResource( 50 ) ]
 start_node = "Normal"
 graph_offset = Vector2( -178, -92 )
 
-[sub_resource type="AnimationNodeAnimation" id=41]
+[sub_resource type="AnimationNodeAnimation" id=52]
 animation = "Walk"
 
-[sub_resource type="AnimationNodeAnimation" id=42]
+[sub_resource type="AnimationNodeAnimation" id=53]
 animation = "WalkTool"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=43]
+[sub_resource type="AnimationNodeStateMachineTransition" id=54]
 switch_mode = 1
 xfade_time = 0.1
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=44]
+[sub_resource type="AnimationNodeStateMachineTransition" id=55]
 switch_mode = 1
 xfade_time = 0.1
 
-[sub_resource type="AnimationNodeStateMachine" id=45]
-states/Normal/node = SubResource( 41 )
+[sub_resource type="AnimationNodeStateMachine" id=56]
+states/Normal/node = SubResource( 52 )
 states/Normal/position = Vector2( 331, 89 )
-states/Tool/node = SubResource( 42 )
+states/Tool/node = SubResource( 53 )
 states/Tool/position = Vector2( 506, 89 )
-transitions = [ "Normal", "Tool", SubResource( 43 ), "Tool", "Normal", SubResource( 44 ) ]
+transitions = [ "Normal", "Tool", SubResource( 54 ), "Tool", "Normal", SubResource( 55 ) ]
 start_node = "Normal"
 
-[sub_resource type="AnimationNodeBlendSpace1D" id=46]
-blend_point_0/node = SubResource( 40 )
+[sub_resource type="AnimationNodeBlendSpace1D" id=57]
+blend_point_0/node = SubResource( 51 )
 blend_point_0/pos = 0.0
-blend_point_1/node = SubResource( 45 )
+blend_point_1/node = SubResource( 56 )
 blend_point_1/pos = 1.0
 min_space = 0.0
 
-[sub_resource type="AnimationNodeBlendTree" id=47]
-graph_offset = Vector2( 37, 372.5 )
-nodes/actions/node = SubResource( 21 )
+[sub_resource type="AnimationNodeBlendTree" id=58]
+graph_offset = Vector2( -164, 419.75 )
+nodes/actions/node = SubResource( 32 )
 nodes/actions/position = Vector2( 240, 400 )
-nodes/blink/node = SubResource( 22 )
+nodes/blink/node = SubResource( 33 )
 nodes/blink/position = Vector2( -180, 600 )
-nodes/eyes/node = SubResource( 23 )
+nodes/eyes/node = SubResource( 34 )
 nodes/eyes/position = Vector2( 20, 300 )
-nodes/eyes_pos/node = SubResource( 33 )
+nodes/eyes_pos/node = SubResource( 44 )
 nodes/eyes_pos/position = Vector2( -200, 420 )
-nodes/one_shot/node = SubResource( 34 )
+nodes/one_shot/node = SubResource( 45 )
 nodes/one_shot/position = Vector2( 460, 280 )
-nodes/output/position = Vector2( 660, 180 )
-nodes/scrat/node = SubResource( 35 )
+nodes/output/position = Vector2( 660, 300 )
+nodes/scrat/node = SubResource( 46 )
 nodes/scrat/position = Vector2( 240, 200 )
-nodes/walk_idle/node = SubResource( 46 )
+nodes/walk_idle/node = SubResource( 57 )
 nodes/walk_idle/position = Vector2( 20, 160 )
-node_connections = [ "output", 0, "one_shot", "one_shot", 0, "scrat", "one_shot", 1, "actions", "eyes", 0, "eyes_pos", "eyes", 1, "blink", "scrat", 0, "walk_idle", "scrat", 1, "eyes" ]
+node_connections = [ "output", 0, "one_shot", "one_shot", 0, "scrat", "one_shot", 1, "actions", "scrat", 0, "walk_idle", "scrat", 1, "eyes", "eyes", 0, "eyes_pos", "eyes", 1, "blink" ]
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=48]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=59]
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=49]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=60]
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=50]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=61]
 
 [node name="Scrat" type="Node2D"]
+material = SubResource( 3 )
 script = ExtResource( 7 )
 
 [node name="HandBG" type="Sprite" parent="."]
-position = Vector2( 70, 40.0085 )
-rotation = -0.610865
+use_parent_material = true
+position = Vector2( 40, 63.4887 )
 texture = ExtResource( 2 )
 
 [node name="FootBG" type="Sprite" parent="."]
-position = Vector2( -14.1292, 119.782 )
-rotation = 0.527398
+use_parent_material = true
+position = Vector2( 15, 130 )
 texture = ExtResource( 5 )
 
 [node name="Body" type="Sprite" parent="."]
-position = Vector2( 0, 25.4354 )
-scale = Vector2( 1.00017, 0.999829 )
+use_parent_material = true
+position = Vector2( 0, 29.851 )
 texture = ExtResource( 6 )
 
 [node name="Pants" type="Sprite" parent="Body"]
+use_parent_material = true
 position = Vector2( 0, 37 )
 texture = ExtResource( 4 )
 __meta__ = {
@@ -2312,58 +2422,63 @@ __meta__ = {
 }
 
 [node name="Head" type="Sprite" parent="."]
-position = Vector2( 0, -79.9829 )
+use_parent_material = true
+position = Vector2( 0, -72.0748 )
 texture = ExtResource( 1 )
 
 [node name="Eyes" type="Node2D" parent="Head"]
+use_parent_material = true
 position = Vector2( 30, 0 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="Style" type="Sprite" parent="Head/Eyes"]
+use_parent_material = true
 position = Vector2( 0, 11 )
 texture = ExtResource( 3 )
 offset = Vector2( 0, -10.1369 )
 
 [node name="FootFG" type="Sprite" parent="."]
-position = Vector2( 13.6938, 120.435 )
-rotation = -0.667734
+use_parent_material = true
+position = Vector2( -15, 130 )
 texture = ExtResource( 5 )
 
 [node name="HandFG" type="Sprite" parent="."]
-position = Vector2( -67.8229, 50.6531 )
-rotation = 0.52243
+use_parent_material = true
+position = Vector2( -40, 63.4887 )
 texture = ExtResource( 2 )
 
 [node name="Anim" type="AnimationPlayer" parent="."]
-anims/ActionDone = SubResource( 1 )
-anims/Dance = SubResource( 2 )
-anims/EyesBlink = SubResource( 3 )
-anims/EyesLeft = SubResource( 4 )
-anims/EyesLeftDown = SubResource( 5 )
-anims/EyesLeftUp = SubResource( 6 )
-anims/EyesMiddle = SubResource( 7 )
-anims/EyesMiddleDown = SubResource( 8 )
-anims/EyesMiddleUp = SubResource( 9 )
-anims/EyesRight = SubResource( 10 )
-anims/EyesRightDown = SubResource( 11 )
-anims/EyesRightUp = SubResource( 12 )
-anims/Idle = SubResource( 13 )
-anims/IdleTool = SubResource( 14 )
-anims/Jump = SubResource( 15 )
-anims/Walk = SubResource( 16 )
-anims/WalkTool = SubResource( 17 )
+anims/ActionDone = SubResource( 4 )
+anims/Dance = SubResource( 5 )
+anims/EyesBlink = SubResource( 6 )
+anims/EyesLeft = SubResource( 7 )
+anims/EyesLeftDown = SubResource( 8 )
+anims/EyesLeftUp = SubResource( 9 )
+anims/EyesMiddle = SubResource( 10 )
+anims/EyesMiddleDown = SubResource( 11 )
+anims/EyesMiddleUp = SubResource( 12 )
+anims/EyesRight = SubResource( 13 )
+anims/EyesRightDown = SubResource( 14 )
+anims/EyesRightUp = SubResource( 15 )
+anims/Idle = SubResource( 16 )
+anims/IdleTool = SubResource( 17 )
+anims/Jump = SubResource( 18 )
+anims/TeleportIn = SubResource( 19 )
+anims/TeleportOut = SubResource( 20 )
+anims/Walk = SubResource( 21 )
+anims/WalkTool = SubResource( 22 )
 
 [node name="AnimTree" type="AnimationTree" parent="."]
-tree_root = SubResource( 47 )
+tree_root = SubResource( 58 )
 anim_player = NodePath("../Anim")
 process_mode = 2
-parameters/actions/playback = SubResource( 48 )
+parameters/actions/playback = SubResource( 59 )
 parameters/eyes/add_amount = 1.0
-parameters/eyes_pos/blend_position = Vector2( -0.0420451, 0.146552 )
-parameters/one_shot/active = true
+parameters/eyes_pos/blend_position = Vector2( 1, 0 )
+parameters/one_shot/active = false
 parameters/scrat/add_amount = 1.0
 parameters/walk_idle/blend_position = 0.0
-parameters/walk_idle/0/playback = SubResource( 49 )
-parameters/walk_idle/1/playback = SubResource( 50 )
+parameters/walk_idle/0/playback = SubResource( 60 )
+parameters/walk_idle/1/playback = SubResource( 61 )
