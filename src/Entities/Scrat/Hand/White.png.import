@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/White.png-a850eb4219b979530d46a37b813c539c.stex"
+path="res://.import/White.png-b41914dc4a12e609afd86a4c2cad6b7a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scrat/Hand/White.png"
-dest_files=[ "res://.import/White.png-a850eb4219b979530d46a37b813c539c.stex" ]
+source_file="res://Entities/Scrat/Hand/White.png"
+dest_files=[ "res://.import/White.png-b41914dc4a12e609afd86a4c2cad6b7a.stex" ]
 
 [params]
 

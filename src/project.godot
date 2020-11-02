@@ -12,12 +12,12 @@ _global_script_classes=[ {
 "base": "KinematicBody2D",
 "class": "OrbitPhysics",
 "language": "GDScript",
-"path": "res://OrbitPhysics.gd"
+"path": "res://Entities/OrbitPhysics.gd"
 }, {
 "base": "OrbitPhysics",
 "class": "Scrat",
 "language": "GDScript",
-"path": "res://Scrat/Scrat.gd"
+"path": "res://Entities/Scrat/Scrat.gd"
 } ]
 _global_script_class_icons={
 "OrbitPhysics": "",

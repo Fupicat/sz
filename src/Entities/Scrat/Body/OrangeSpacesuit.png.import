@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Eyes.png-caf17995ddb9f2bc74d9a872fb382554.stex"
+path="res://.import/OrangeSpacesuit.png-c91ba99147c0a7f8586a452764ee1423.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scrat/Eyes/Eyes.png"
-dest_files=[ "res://.import/Eyes.png-caf17995ddb9f2bc74d9a872fb382554.stex" ]
+source_file="res://Entities/Scrat/Body/OrangeSpacesuit.png"
+dest_files=[ "res://.import/OrangeSpacesuit.png-c91ba99147c0a7f8586a452764ee1423.stex" ]
 
 [params]
 

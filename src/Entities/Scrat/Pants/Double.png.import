@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Bald.png-d491531a3307b2ff1eb0d1fbd61a9b37.stex"
+path="res://.import/Double.png-ad121c13470302229e9aeda5c3d50114.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scrat/Head/Bald.png"
-dest_files=[ "res://.import/Bald.png-d491531a3307b2ff1eb0d1fbd61a9b37.stex" ]
+source_file="res://Entities/Scrat/Pants/Double.png"
+dest_files=[ "res://.import/Double.png-ad121c13470302229e9aeda5c3d50114.stex" ]
 
 [params]
 

@@ -1,12 +1,12 @@
 [gd_scene load_steps=70 format=2]
 
-[ext_resource path="res://Scrat/Head/Bald.png" type="Texture" id=1]
-[ext_resource path="res://Scrat/Hand/Debug.png" type="Texture" id=2]
-[ext_resource path="res://Scrat/Eyes/Eyes.png" type="Texture" id=3]
-[ext_resource path="res://Scrat/Pants/Double.png" type="Texture" id=4]
-[ext_resource path="res://Scrat/Foot/Debug.png" type="Texture" id=5]
-[ext_resource path="res://Scrat/Body/OrangeSpacesuit.png" type="Texture" id=6]
-[ext_resource path="res://Scrat/AnimManager.gd" type="Script" id=7]
+[ext_resource path="res://Entities/Scrat/Head/Bald.png" type="Texture" id=1]
+[ext_resource path="res://Entities/Scrat/Hand/Debug.png" type="Texture" id=2]
+[ext_resource path="res://Entities/Scrat/Eyes/Eyes.png" type="Texture" id=3]
+[ext_resource path="res://Entities/Scrat/Pants/Double.png" type="Texture" id=4]
+[ext_resource path="res://Entities/Scrat/Foot/Debug.png" type="Texture" id=5]
+[ext_resource path="res://Entities/Scrat/Body/OrangeSpacesuit.png" type="Texture" id=6]
+[ext_resource path="res://Entities/Scrat/AnimManager.gd" type="Script" id=7]
 [ext_resource path="res://Shaders/dissolve.shader" type="Shader" id=8]
 
 [sub_resource type="OpenSimplexNoise" id=1]
@@ -2370,7 +2370,7 @@ blend_point_1/pos = 1.0
 min_space = 0.0
 
 [sub_resource type="AnimationNodeBlendTree" id=58]
-graph_offset = Vector2( -164, 419.75 )
+graph_offset = Vector2( -41, 211 )
 nodes/actions/node = SubResource( 32 )
 nodes/actions/position = Vector2( 240, 400 )
 nodes/blink/node = SubResource( 33 )
@@ -2400,17 +2400,20 @@ script = ExtResource( 7 )
 
 [node name="HandBG" type="Sprite" parent="."]
 use_parent_material = true
-position = Vector2( 40, 63.4887 )
+position = Vector2( 22.0031, 64.3991 )
+rotation = -0.303277
 texture = ExtResource( 2 )
 
 [node name="FootBG" type="Sprite" parent="."]
 use_parent_material = true
-position = Vector2( 15, 130 )
+position = Vector2( 4.19874, 115.2 )
+rotation = 0.607369
 texture = ExtResource( 5 )
 
 [node name="Body" type="Sprite" parent="."]
 use_parent_material = true
-position = Vector2( 0, 29.851 )
+position = Vector2( 0, 34.5994 )
+scale = Vector2( 1.05326, 0.946744 )
 texture = ExtResource( 6 )
 
 [node name="Pants" type="Sprite" parent="Body"]
@@ -2423,7 +2426,7 @@ __meta__ = {
 
 [node name="Head" type="Sprite" parent="."]
 use_parent_material = true
-position = Vector2( 0, -72.0748 )
+position = Vector2( 0, -74.6744 )
 texture = ExtResource( 1 )
 
 [node name="Eyes" type="Node2D" parent="Head"]
@@ -2441,12 +2444,14 @@ offset = Vector2( 0, -10.1369 )
 
 [node name="FootFG" type="Sprite" parent="."]
 use_parent_material = true
-position = Vector2( -15, 130 )
+position = Vector2( -13.7981, 129.599 )
+rotation = -0.0279692
 texture = ExtResource( 5 )
 
 [node name="HandFG" type="Sprite" parent="."]
 use_parent_material = true
-position = Vector2( -40, 63.4887 )
+position = Vector2( -22.0031, 64.3991 )
+rotation = 0.303277
 texture = ExtResource( 2 )
 
 [node name="Anim" type="AnimationPlayer" parent="."]
@@ -2479,6 +2484,6 @@ parameters/eyes/add_amount = 1.0
 parameters/eyes_pos/blend_position = Vector2( 1, 0 )
 parameters/one_shot/active = false
 parameters/scrat/add_amount = 1.0
-parameters/walk_idle/blend_position = 0.0
+parameters/walk_idle/blend_position = 1.0
 parameters/walk_idle/0/playback = SubResource( 60 )
 parameters/walk_idle/1/playback = SubResource( 61 )

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Brown.png-721261d9cdd319a371c943b7e10edd4d.stex"
+path="res://.import/Bald.png-6f625abc37d7daff0bd82bc1de8dbdee.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scrat/Foot/Brown.png"
-dest_files=[ "res://.import/Brown.png-721261d9cdd319a371c943b7e10edd4d.stex" ]
+source_file="res://Entities/Scrat/Head/Bald.png"
+dest_files=[ "res://.import/Bald.png-6f625abc37d7daff0bd82bc1de8dbdee.stex" ]
 
 [params]
 
