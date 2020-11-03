@@ -41,12 +41,4 @@ func _physics_process(delta):
     anim.animtree.advance(delta)
 
 func _input(event):
-    if event.is_action_pressed("action"):
-        var lixo = ClothingItem.new("Bosta" + str(rand_range(0, 69)))
-        profile.inventory.append(lixo)
-        var printi = ""
-        for item in profile.inventory:
-            printi +=  item.name + " "
-        print(printi)
-    if event.is_action_pressed("ui_end"):
-        Global.save()
+    pass
