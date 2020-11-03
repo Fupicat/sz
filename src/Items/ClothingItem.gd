@@ -21,12 +21,20 @@ func _init(p_name = "",
     body_part = p_body_part
 
 func save_to_dict():
-    var save_data = {
-        "type": "ClothingItem",
-        "name": name,
-        "icon": icon.load_path,
-        "body_part": body_part,
-       }
+    var save_data
+    # If the item exists on disk, just save the path
+    if is_saved_to_disk():
+        save_data = {
+            "path": resource_path,
+        }
+    # If it doesn't, a new item will be created on load
+    else:
+        save_data = {
+            "type": "ClothingItem",
+            "name": name,
+            "icon": icon.load_path,
+            "body_part": body_part,
+        }
     return save_data
 
 func load_from_dict(dict : Dictionary):

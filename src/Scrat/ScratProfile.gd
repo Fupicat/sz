@@ -10,21 +10,28 @@ func _init(p_name = "", p_money = 0, p_inventory = []):
     money = p_money
     inventory = p_inventory
 
+func is_saved_to_disk():
+    var path_no_res = resource_path.replace("res://", "")
+    var path_ok = not (resource_path.empty() or ":" in path_no_res)
+    return path_ok
+
 func save_to_dict():
     # Save all inventory items into dictionaries
     var inventory_save = []
     for item in inventory:
-        if item.is_saved_to_disk():
-            inventory_save.append(item.save_file_path())
-        else:
-            inventory_save.append(item.save_to_dict())
+        inventory_save.append(item.save_to_dict())
     
-    # Make dictionary that will be saved for this character
     var save_data = {
         "name": name,
         "money": money,
         "inventory": inventory_save,
-       }
+    }
+    
+    # If character exists on disk, save the path along with the other stuff
+    # Since everything about a character can be changed
+    if is_saved_to_disk():
+        save_data["path"] = resource_path
+    
     return save_data
 
 func load_from_dict(dict : Dictionary):
