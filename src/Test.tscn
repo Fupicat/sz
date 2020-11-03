@@ -1,8 +1,7 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Planets/Town/Base.png" type="Texture" id=1]
 [ext_resource path="res://Scrat/Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scrat/Characters/Player.tres" type="Resource" id=3]
 [ext_resource path="res://Planets/Town/Restaurant.png" type="Texture" id=4]
 [ext_resource path="res://Planets/Town/ClothingStore.png" type="Texture" id=5]
 [ext_resource path="res://Shaders/outline.shader" type="Shader" id=6]
@@ -66,4 +65,3 @@ position = Vector2( -7.74652, 147.229 )
 shape = SubResource( 4 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-profile = ExtResource( 3 )

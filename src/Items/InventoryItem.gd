@@ -19,3 +19,14 @@ func save_to_dict():
 
 func load_from_dict(dict : Dictionary):
     _init(dict["name"], dict["icon"])
+
+func is_saved_to_disk():
+    var path_no_res = resource_path.replace("res://", "")
+    var path_ok = not (resource_path.empty() or ":" in path_no_res)
+    return path_ok
+
+func save_file_path():
+    var save_data = {
+        "path": resource_path,
+       }
+    return save_data

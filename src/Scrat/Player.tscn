@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scrat/ScratAnim.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Shaders/dissolve.shader" type="Shader" id=2]
 [ext_resource path="res://Scrat/Player.gd" type="Script" id=3]
+[ext_resource path="res://Scrat/Characters/Player.tres" type="Resource" id=4]
 
 [sub_resource type="OpenSimplexNoise" id=1]
 period = 256.0
@@ -25,6 +26,7 @@ extents = Vector2( 66.4702, 147.262 )
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 3 )
+profile = ExtResource( 4 )
 
 [node name="ScratAnim" parent="." instance=ExtResource( 1 )]
 material = SubResource( 3 )
