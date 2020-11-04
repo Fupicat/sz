@@ -11,11 +11,14 @@ enum body {
 
 export(body) var body_part
 
-func _init(p_name = "",
-        p_icon = load("res://Items/Clothes/Head/Bald.png"),
-        p_body_part = body.HEAD):
+func _init(p_guid := str(randi()),
+        p_name := "",
+        p_icon := load("res://Items/Clothes/Head/Bald.png"),
+        p_flavor := "",
+        p_body_part := body.HEAD):
+    guid = p_guid
     name = p_name
+    icon = p_icon # Icon doubles as texture for the clothing itself
+    flavor = p_flavor
     
-    # Icon doubles as texture for the clothing itself
-    icon = p_icon
     body_part = p_body_part

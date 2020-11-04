@@ -5,6 +5,8 @@
 
 [resource]
 script = ExtResource( 2 )
+guid = "6d6c61ec-abaf-4509-8833-2edb62dfbaa4"
 name = "BALD"
 icon = ExtResource( 1 )
+flavor = "BALDBIO"
 body_part = 0

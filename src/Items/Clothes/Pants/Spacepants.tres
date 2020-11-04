@@ -5,6 +5,8 @@
 
 [resource]
 script = ExtResource( 2 )
+guid = "24669513-2190-4f6e-b0f5-2323aa9d6eec"
 name = "SPACEPANTS"
 icon = ExtResource( 1 )
+flavor = "SPACEPANTSBIO"
 body_part = 2

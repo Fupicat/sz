@@ -5,6 +5,8 @@
 
 [resource]
 script = ExtResource( 2 )
+guid = "c1f2af04-547d-455b-a5de-182c40cd800e"
 name = "ORANGESUIT"
 icon = ExtResource( 1 )
+flavor = "ORANGESUITBIO"
 body_part = 1

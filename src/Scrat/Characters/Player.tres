@@ -11,6 +11,8 @@
 
 [resource]
 script = ExtResource( 1 )
-name = "Scrat"
+guid = "a3a3f1aa-1f76-484f-8d5b-21bff70c22c2"
+name = "Player"
 money = 0
 inventory = [ ExtResource( 2 ), ExtResource( 4 ), ExtResource( 7 ), ExtResource( 3 ), ExtResource( 6 ), ExtResource( 8 ), ExtResource( 5 ) ]
+bio = "PLAYERBIO"
